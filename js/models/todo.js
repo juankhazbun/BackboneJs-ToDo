@@ -4,7 +4,7 @@ app.Todo = Backbone.Model.extend({
 
 	// Default attributes ensure that each todo created has 
 	// 'title' and 'completed' keys
-	defaults = {
+	defaults: {
 		title: '',
 		completed: false
 	},

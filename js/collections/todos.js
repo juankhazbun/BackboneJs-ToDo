@@ -33,8 +33,8 @@ var TodoList = Backbone.Collection.extend({
 	// Todos are sorted by their original insertion order
 	comparator: function( todo ) {
 		return todo.get( 'order' );
-	},
-
-	// Create global collection of Todos
-	app.Todos = new TodoList();
+	}	
 });
+
+// Create global collection of Todos
+	app.Todos = new TodoList();
