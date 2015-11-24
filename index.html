@@ -62,9 +62,29 @@
       <p>Created by <a href="http://TodoMVComvc.com">you</a></p>
       <p>Part of <a href="http://todomvc.com">TodoMVCcC</a></p>
     </footer>
+    <!-- Templates Section -->
+    <script type="text/template" id="item-template">
+      <div class="view">
+        <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+        <label><%- title %></label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" value="<%- edit %>">
+    </script>
 
-    <script type="text/template" id="item-template"></script>
-    <script type="text/template" id="stats-template"></script>
+    <script type="text/template" id="stats-template">
+      <span id="todo-count"><strong><%= remaining %></strong>
+      <%= ramining == 1 ? "item" : "items" %> left</span>
+      <ul id="filters">
+        <li><a class="selected" href="#/">All</a></li>
+        <li><a href="#/active">Active</a></li>
+        <li><a href="#/completed">Completed</a></li>
+      </ul>
+      <% if (completed) { %>
+        <button id="clear-completed">Clear completed (<%= completed %>)</button>
+      <% } %>
+    </script>
+    <!-- End Templates Section -->
     <script src="js/lib/jquery-1.11.3.min.js"></script>
     <script src="js/lib/underscore-min.js"></script>
     <script src="js/lib/backbone-min.js"></script>
